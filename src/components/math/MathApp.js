@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
-import { Container } from "./components/Container";
+import "./MathApp.css";
+import { Container } from "./Container";
 
 const numberOfSheets = 30;
 let currentOperator = "+";
@@ -92,29 +92,7 @@ function generateProgressiveMathQuestions(numSheets, operator) {
   return item;
 }
 
-function generatePDF() {
-  var opt = {
-    margin: 1,
-    filename: "myfile.pdf",
-    image: { type: "jpeg", quality: 0.98 },
-    pagebreak: {
-      mode: "css",
-    },
-    html2canvas: {
-      dpi: 300,
-      letterRendering: true,
-      width: 840,
-      height: 1188 * numberOfSheets,
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-  };
-  // Choose the element that your content will be rendered to.
-  const element = document.querySelector(".book");
-  // Choose the element and save the PDF for your user.
-  window.html2pdf().set(opt).from(element).save();
-}
-
-function App() {
+function MathApp() {
   const [currentPages, setCurrentPages] = useState(pages);
   return (
     <>
@@ -175,4 +153,4 @@ function App() {
   );
 }
 
-export default App;
+export default MathApp;

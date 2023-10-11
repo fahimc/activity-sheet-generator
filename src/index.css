@@ -38,6 +38,7 @@ code {
   position: relative;
   padding: 20px;
   box-sizing: border-box;
+  page-break-after: always;
 }
 
 /* ...or add this class to an element */
@@ -84,6 +85,7 @@ h2 {
   position: relative;
   justify-content: space-between;
   font-weight: bold;
+  font-size: 80%;
 }
 .answer-block {
   margin-left: 20px;
@@ -101,11 +103,20 @@ h2 {
   transform: scale(-1, 1);
   margin-left: 10px;
 }
+.title-cover {
+  width: 100%;
+}
 @media print {
   body {
     visibility: hidden;
   }
   .page-container {
     visibility: visible;
+  }
+  @media print {
+    html,
+    body {
+      height: 99%;
+    }
   }
 }

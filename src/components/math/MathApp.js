@@ -113,12 +113,12 @@ function MathApp() {
         <option value={""}>mixed</option>
       </select>
       <div className="book">
-        <div className="page-container">
+        {/* <div className="page-container">
           <img className="title-cover" src="assets/images/title.png"></img>
-        </div>
+        </div> */}
         {currentPages.map((currentPage, key) => {
           return (
-            <div className="page-container" key={key}>
+            <div className="page-container kdp" key={key}>
               <div className="pattern"></div>
               <div className="page">
                 <div>
@@ -134,20 +134,20 @@ function MathApp() {
                   <h2>{getOperatorTitle(currentOperator)}</h2>
                 </div>
                 <Container items={currentPage} />
-                <div className="bottom">
+                {/* <div className="bottom">
                   <img src="assets/images/bottom2.png"></img>
-                </div>
+                </div> */}
               </div>
             </div>
           );
         })}
-        <div className="page-container">
+        {/* <div className="page-container">
           <img
             style={{ pageBreakAfter: "before" }}
             className="title-cover"
             src="assets/images/colouring-back.png"
           ></img>
-        </div>
+        </div> */}
       </div>
     </>
   );

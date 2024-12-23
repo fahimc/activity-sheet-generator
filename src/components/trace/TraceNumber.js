@@ -1,6 +1,5 @@
 import "./TraceNumber.css";
 
-const numberOfSheets = 30;
 const numbersInWords = [
   "one",
   "two",
@@ -52,18 +51,17 @@ function generateNumberTrace(index) {
 
   return item;
 }
-function generateProgressiveMathQuestions(numSheets) {
+function generateProgressiveMathQuestions(numSheets, start = 1, end = 30) {
   const item = [];
 
-  for (let i = 1; i <= numSheets; i++) {
+  for (let i = start; i <= end; i++) {
     item.push(generateNumberTrace(i));
   }
   return item;
 }
-let pages = generateProgressiveMathQuestions(numberOfSheets);
 
 function getTraceNumbers(number) {
-  let length = 7;
+  let length = 6;
   switch (number) {
     case 10:
       length = 4;
@@ -72,7 +70,7 @@ function getTraceNumbers(number) {
       length = 6;
       break;
     case 1:
-      length = 12;
+      length = 10;
   }
   if (number === 11) length = 6;
   if (number > 11) length = 4;
@@ -121,34 +119,48 @@ function createNumberArray(start, end, numberToRepeat, arrayLength) {
   return numberArray;
 }
 
-// Example usage:
-const start = 1;
-const end = 10;
-const numberToRepeat = 5;
-const arrayLength = 20;
-const resultArray = createNumberArray(start, end, numberToRepeat, arrayLength);
+function MathApp({
+  numberOfSheets = 30,
+  startNumber = 1,
+  endNumber = 30,
+  numberToRepeat = 5,
+  arrayLength = 20,
+}) {
+  let pages = generateProgressiveMathQuestions(
+    numberOfSheets,
+    startNumber,
+    endNumber
+  );
+  const resultArray = createNumberArray(
+    startNumber,
+    endNumber,
+    numberToRepeat,
+    arrayLength
+  );
 
-if (resultArray) {
-  console.log(resultArray);
-}
-
-function MathApp() {
+  if (resultArray) {
+    console.log(resultArray);
+  }
   return (
     <>
       <div className="book">
-        <div className="page-container">
+        {/* <div className="page-container">
           <img className="title-cover" src="assets/images/title.png"></img>
-        </div>
+        </div> */}
         {pages.map((item) => {
           return (
-            <div className="page-container trace ">
+            <div
+              className={`page-container trace kdp ${
+                item.number > 10 ? "small" : ""
+              }`}
+            >
               <div className="header">
                 <div className="text">
                   <h1>LETS LEARN THE NUMBER</h1>
                   <span
                     className="highlight word"
                     style={{
-                      fontSize: item.number > 10 ? "60px" : "100px",
+                      fontSize: "50px",
                     }}
                   >
                     {item.word}
@@ -174,16 +186,11 @@ function MathApp() {
                   COLOUR <span className="highlight">{item.word}</span> CIRCLES
                 </span>
                 <div className="circle-container">
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                  <div className="circle"></div>
+                  {Array.from({
+                    length: item.number + randomIntFromInterval(1, 5),
+                  }).map((_, index) => (
+                    <div key={index} className="circle"></div>
+                  ))}
                 </div>
               </div>
               <br></br>
@@ -193,7 +200,7 @@ function MathApp() {
                 <span
                   className="trace-it"
                   style={{
-                    fontSize: item.number > 11 ? "100px" : "180px",
+                    fontSize: item.number > 11 ? "90px" : "130px",
                   }}
                 >
                   {item.word}
@@ -219,13 +226,13 @@ function MathApp() {
           );
         })}
 
-        <div className="page-container">
+        {/* <div className="page-container">
           <img
             style={{ pageBreakAfter: "before" }}
             className="title-cover"
             src="assets/images/colouring-back.png"
           ></img>
-        </div>
+        </div> */}
       </div>
     </>
   );

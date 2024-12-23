@@ -60,7 +60,12 @@ code {
   box-sizing: border-box;
   page-break-after: always;
 }
-
+.page-container.kdp {
+  width: 816px;
+  height: 1056px;
+  margin-bottom: 30px;
+  padding: 60px;
+}
 /* ...or add this class to an element */
 .pattern {
   position: absolute;
@@ -72,13 +77,14 @@ code {
     radial-gradient(rgb(255, 255, 255) 12.8%, transparent 12.8%); */
   background-position: 0px 0px, 56px 56px;
   background-size: 112px 112px;
-  background-color: rgb(239, 82, 21);
+  /* background-color: rgb(239, 82, 21); */
 }
 
 h1 {
-  font-family: "Grinched";
-  font-size: 63px;
+  font-family: "OpenSansExtraBold";
+  font-size: 47px;
   margin: 0 0 5px 0;
+  color: #5e17eb;
 }
 h2 {
   font-size: 36px;

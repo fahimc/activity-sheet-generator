@@ -43,12 +43,12 @@ function MathApp() {
   return (
     <>
       <div className="book">
-        <div className="page-container">
+        {/* <div className="page-container">
           <img className="title-cover" src="assets/images/title.png"></img>
-        </div>
+        </div> */}
         {pages.map((item) => {
           return (
-            <div className="page-container number ">
+            <div className="page-container kdp number ">
               <h1>Apple Orchard Sequencing</h1>
               <p>
                 {" "}
@@ -60,13 +60,13 @@ function MathApp() {
           );
         })}
 
-        <div className="page-container">
+        {/* <div className="page-container">
           <img
             style={{ pageBreakAfter: "before" }}
             className="title-cover"
             src="assets/images/colouring-back.png"
           ></img>
-        </div>
+        </div> */}
       </div>
     </>
   );

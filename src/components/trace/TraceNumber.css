@@ -67,6 +67,12 @@ h1 {
   margin: 0;
   text-align: right;
 }
+.kdp .header .number {
+  font-size: 280px;
+}
+.kdp .header .number span {
+  line-height: 268px;
+}
 .highlight {
   color: #5e17eb;
   text-transform: uppercase;
@@ -98,6 +104,10 @@ h1 {
   margin-bottom: 0;
   line-height: 107px;
 }
+.kdp .trace-it {
+  font-size: 130px;
+  line-height: 77px;
+}
 hr {
   margin: 0;
 }
@@ -106,13 +116,24 @@ hr {
 }
 .circle-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 .circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: 2px solid black;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+}
+.trace-number {
+  margin-right: 30px;
 }
 .number-cloud {
   display: flex;

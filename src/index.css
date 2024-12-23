@@ -2,6 +2,26 @@
   font-family: "Grinched";
   src: url("../public/assets/fonts/grinched.otf") format("opentype");
 }
+@font-face {
+  font-family: "OpenSansExtraBold";
+  src: url("../public/assets/fonts/OpenSans-ExtraBold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../public/assets/fonts/OpenSans-Bold.ttf") format("opentype");
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../public/assets/fonts/OpenSans-Light.ttf") format("opentype");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../public/assets/fonts/OpenSans-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "QuicksandDash";
+  src: url("../public/assets/fonts/Quicksand_Dash.otf") format("opentype");
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
